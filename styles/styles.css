@@ -238,6 +238,7 @@ html {
 html {
   font-size: 125%;
   color: whitesmoke;
+  scroll-behavior: smooth;
 }
 
 body {

@@ -1,5 +1,21 @@
 const myApp = [];
 
+myApp.scroll = () => {
+    $("a").on('click', function (event) {
+
+        if (this.hash !== "") {
+            event.preventDefault();
+            let hash = this.hash;
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 1000, function () {
+
+                window.location.hash = hash;
+            });
+        } 
+    });
+};
+
 const maxRounds = 10;
 let rounds = 1;
 
@@ -7,7 +23,7 @@ myApp.refresh = () => {
     //empty form input on refresh
     $("form input[name=playerOneInput]").val("")
     $("form input[name=playerTwoInput]").val("")
-}
+};
 
 myApp.submitButton = () => {
     $('#submit').on('click', function () {
@@ -89,6 +105,7 @@ myApp.resetButton = () => {
 }
 
 myApp.init = () => {
+    myApp.scroll()
     myApp.submitButton();
     myApp.resetButton();
     myApp.refresh()
