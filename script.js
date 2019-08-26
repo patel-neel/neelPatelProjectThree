@@ -1,17 +1,16 @@
 const myApp = [];
 
 const maxRounds = 10;
-let rounds = 0;
+let rounds = 1;
 
+myApp.refresh = () => {
+    //empty form input on refresh
+    $("form input[name=playerOneInput]").val("")
+    $("form input[name=playerTwoInput]").val("")
+}
 
-
-
-
-
-$(document).ready(function(){
-
-    //get player response from form
-    $('#submit').on('click', function(){
+myApp.submitButton = () => {
+    $('#submit').on('click', function () {
 
         //check number of rounds
         if (rounds >= maxRounds) {
@@ -19,7 +18,9 @@ $(document).ready(function(){
             return;
         }
         rounds++;  //increment rounds
+
         $('#rounds').text(rounds);
+
 
         //change button color if rounds get close to 10
 
@@ -37,8 +38,7 @@ $(document).ready(function(){
         let playerTwo = $("#playerTwoInput").val();
 
         //check for empty input
-
-        if(playerOne === "") {
+        if (playerOne === "") {
             alert("player One please eneter a word");
             return;
         }
@@ -50,44 +50,58 @@ $(document).ready(function(){
 
 
         // compare players responses
-
         let correct = false;
         if (playerOne == playerTwo) {
             //win game - game over
             correct = true;
             alert('you win!')
-        } 
-            //print players response and symbol to screen
+        }
+        //print players response and symbol to screen
 
-            
-            
-            let html_playerOne = "<li> " + playerOne + "</li>";
-            let html_playerSymbol = "<li> " + " X " + "</li>";
-            if (correct === true) {
-                html_playerSymbol = "<li> " + " Y " + "</li>";
-            }
-        
-            
-            let html_playerTwo = "<li> " + playerTwo + "</li>";
 
-            $('#playerOneOutput').append(html_playerOne);
-            $('#winOrLoseSymbol').append(html_playerSymbol);
-            $('#playerTwoOutput').append(html_playerTwo);
+
+        let htmlPlayerOne = "<li> " + playerOne + "</li>";
+        let htmlPlayerSymbol = "<li> " + `<i class="far fa-times-circle"></i>` + "</li>";
+
+        if (correct === true) {
+            htmlPlayerSymbol = "<li> " + " 🥳 " + "</li>";
+        }
+
+
+        let htmlPlayerTwo = "<li> " + playerTwo + "</li>";
+
+        $('#playerOneOutput').append(htmlPlayerOne);
+        $('#winOrLoseSymbol').append(htmlPlayerSymbol);
+        $('#playerTwoOutput').append(htmlPlayerTwo);
 
         $("#playerOneInput").val("");
         $("#playerTwoInput").val("");
 
     });
+}
 
-    $('#resetButton').on('click', function(){
+myApp.resetButton = () => {
+    $('#resetButton').on('click', function () {
         $("#playerOneInput").val("");
         $("#playerTwoInput").val("");
         location.reload();
     })
+}
 
-    $("form input[name=playerOneInput]").val("")
-    $("form input[name=playerTwoInput]").val("")
+myApp.init = () => {
+    myApp.submitButton();
+    myApp.resetButton();
+    myApp.refresh()
+}
 
+
+
+
+
+
+$(document).ready(function () {
+
+    myApp.init();
 
 });
 
