@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="pragma" content="no=cache">
@@ -11,10 +12,11 @@
 
     <script src="https://kit.fontawesome.com/000cbe3da1.js"></script>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/styles.css">
 
     <title>1, 2, 3...Word!</title>
 </head>
+
 <body>
     <header>
         <div class="wrapper">
@@ -52,61 +54,67 @@
             <div class="playerInput">
                 <div class=" player playerOne">
                     <h2>Player One:</h2>
-    
+
                     <form class="wordInput" action="">
-                        <input type="text" name="playerOneInput" id="playerOneInput" value="" placeholder="Enter Random Word">
+                        <input type="password" name="playerOneInput" id="playerOneInput" value=""
+                            placeholder="Enter Random Word">
                     </form>
                 </div>
 
 
                 <div class=" player playerTwo">
                     <h2>Player Two:</h2>
-                
+
                     <form class="wordInput" action="">
-                        <input type="text" name="playerTwoInput" id="playerTwoInput" value="" placeholder="Enter Random Word">
+                        <input type="password" name="playerTwoInput" id="playerTwoInput" value=""
+                            placeholder="Enter Random Word">
                     </form>
                 </div>
             </div>
             <form action="">
-                <input type="submit" name="" id="submit">
+                <input type="submit" name="submit" id="submit" value="submit!">
             </form>
 
             <div class="roundsReset">
                 <div class="rounds">
                     <h3>Round: <span id="rounds">1</span>/10</h3>
                 </div>
-    
+
+                <div class="playerOutput">
+                    <ul id="playerOneOutput" class="playerOneOutput">
+                        <li class="outputTemplate">Word:</li>
+                    </ul>
+
+                    <ul id="winOrLoseSymbol" class="winOrLoseSymbol">
+                        <li>|</li>
+                    </ul>
+
+                    <ul id="playerTwoOutput" class="playerTwoOutput">
+                        <li class="outputTemplate">Word:</li>
+                    </ul>
+                </div>
+
                 <div class="resetButton">
                     <button id="resetButton">Reset</button>
                 </div>
             </div>
 
 
-            <div class="playerOutput">
-                <ul id="playerOneOutput" class="playerOneOutput">
-                    <li class="outputTemplate">Word:</li>
-                </ul>
 
-                <ul id="winOrLoseSymbol" class="winOrLoseSymbol">
-                    <li>|</li>
-                </ul>
-
-                <ul id="playerTwoOutput" class="playerTwoOutput">
-                    <li class="outputTemplate">Word:</li>
-                </ul>
-            </div>
         </div>
-        
+
     </main>
 
 
 
 
-    <script src='https://code.jquery.com/jquery-3.4.0.min.js' integrity='sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=' crossorigin='anonymous'></script>
+    <script src='https://code.jquery.com/jquery-3.4.0.min.js'
+        integrity='sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=' crossorigin='anonymous'></script>
 
 
     <script src="script.js"></script>
 
 
 </body>
+
 </html>
