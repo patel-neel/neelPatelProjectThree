@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="pragma" content="no=cache">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:700|Permanent+Marker&display=swap" rel="stylesheet">
+    <!-- font-family: 'Permanent Marker', cursive;
+    font-family: 'Amatic SC', cursive; -->
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>1, 2, 3...Word!</title>
+</head>
+<body>
+    <header>
+        <div class="wrapper">
+            <h1>
+                1, 2, 3... Word!
+            </h1>
+
+            <div class="instructions">
+                <div class="instructionText">
+                    <p>Welcome to Convergence</p>
+                    <p>How to win: Guess the same word at the same time!</p>
+                    <p>Instructions:</p>
+                    <ul>
+                        <li>Two players input any two random words.</li>
+                        <li>Keep guessing two random words until you both guess the same word.</li>
+                        <li>Guess the same word in under 10 rounds.</li>
+                        <li>Pair who guesses the same word in as few rounds as possible wins!</li>
+                    </ul>
+                </div>
+            </div>
+            <div class=".playButton">
+                <a href="#main">Play!</a>
+            </div>
+
+        </div>
+
+    </header>
+
+    <main id="main">
+        <div class="wrapper">
+            <h1>
+                Convergence!
+            </h1>
+
+            <div class="playerInput">
+                <div class=" player playerOne">
+                    <h2>Player One:</h2>
+    
+                    <form class="wordInput" action="">
+                        <input type="text" name="playerOneInput" id="playerOneInput" value="" placeholder="Enter Random Word">
+                    </form>
+                </div>
+
+
+                <div class=" player playerTwo">
+                    <h2>Player Two:</h2>
+                
+                    <form class="wordInput" action="">
+                        <input type="text" name="playerTwoInput" id="playerTwoInput" value="" placeholder="Enter Random Word">
+                    </form>
+                </div>
+            </div>
+            <form action="">
+                <input type="submit" name="" id="submit">
+            </form>
+
+            <div class="roundsReset">
+                <div class="rounds">
+                    <h3>Round: <span id="rounds">1</span>/10</h3>
+                </div>
+    
+                <div class="resetButton">
+                    <button id="resetButton">Reset</button>
+                </div>
+            </div>
+
+
+            <div class="playerOutput">
+                <ul id="playerOneOutput" class="playerOneOutput">
+                </ul>
+
+                <ul id="winOrLoseSymbol" class="winOrLoseSymbol">
+                </ul>
+
+                <ul id="playerTwoOutput" class="playerTwoOutput">
+                </ul>
+            </div>
+        </div>
+        
+    </main>
+
+
+
+
+    <script src='https://code.jquery.com/jquery-3.4.0.min.js' integrity='sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=' crossorigin='anonymous'></script>
+
+
+    <script src="script.js"></script>
+
+
+</body>
+</html>
